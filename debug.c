@@ -5,11 +5,14 @@
 ** Login   <billet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 19 15:52:16 2013 gregoire1 billet
-** Last update Sat Mar 23 21:41:18 2013 gregoire1 billet
+** Last update Sun Mar 24 00:16:39 2013 gregoire1 billet
 */
 
 #include "head.h"
 
+/*
+** Mise en page et affichage des données de la structure game
+*/
 int		debug(t_game *game)
 {
   aff(center("Fourmiland", '-', "", 80));
@@ -20,5 +23,5 @@ int		debug(t_game *game)
   aff(center("Au début il y a x fourmis", ' ', "|", 40));
   aff(center("Nous sommes au tour x", ' ', "|", 40));
   aff(center("", '-', "", 40));
-  my_put_nbr(my_getnbr("42"));
+  my_put_nbr(game->inx);
 }

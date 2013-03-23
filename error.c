@@ -5,11 +5,14 @@
 ** Login   <billet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 19 15:51:41 2013 gregoire1 billet
-** Last update Tue Mar 19 16:32:17 2013 gregoire1 billet
+** Last update Sun Mar 24 00:15:47 2013 gregoire1 billet
 */
 
 #include "head.h"
 
+/*
+** Vérifie l'existence du fichier envoyé en paramètre
+*/
 int		file_exists(char *str)
 {
   return (1);

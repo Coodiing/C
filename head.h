@@ -5,7 +5,7 @@
 ** Login   <billet_a@epitech.net>
 ** 
 ** Started on  Sat Mar 23 21:40:53 2013 gregoire1 billet
-** Last update Sat Mar 23 21:40:55 2013 gregoire1 billet
+** Last update Sun Mar 24 00:14:09 2013 gregoire1 billet
 */
 
 #ifndef _HEAD_H_
@@ -18,6 +18,10 @@ struct	s_game
   char	*file;
   char	*fourmis;
   char  *map;
+  int	inx;
+  int	iny;
+  int	outx;
+  int	outy;
   char	*quadri;
   int	turn;
 };
@@ -29,5 +33,5 @@ char	*center(char *str, char replace, char *border, int size);
 char	*addend(char *begin, char *end);
 char	*my_strdup(char *str);
 char	*add_space(char *str);
-
+void	*xmalloc(int size);
 #endif

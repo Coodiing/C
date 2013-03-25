@@ -5,7 +5,7 @@
 ** Login   <billet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 19 15:52:43 2013 gregoire1 billet
-** Last update Sun Mar 24 00:26:16 2013 gregoire1 billet
+** Last update Mon Mar 25 18:05:35 2013 gregoire1 billet
 */
 
 #include <stdlib.h>
@@ -13,159 +13,14 @@
 #include "/home/billet_a/lib/header.h"
 
 /*
-** Centre str sur un plateau de longueur size. str sera entouré par border puis
-** le caractère replace 
-*/
-char		*center(char *str, char replace, char *border, int size)
-{
-  int		len;
-  int		tmp;
-  char		*centertext;
-  int		i;
-  int		maxw;
-  int		j;
-  int		z;
-
-  maxw = size - 2 * my_strlen(border);
-  i = 0;
-  centertext = xmalloc(80 * sizeof(char *));
-  z = (80-size) / 2;
-  while (z > 0)
-    {
-      centertext[i] = ' ';
-      i++;
-      z--;
-    }
-  z = (80 - size) / 2;
-  j = 0;
-  if (!is_pair(my_strlen(str)))
-     str = fusion(str, " ");
-  len = (maxw - my_strlen(str)) / 2;
-  tmp = len;
-  while (border[j] != '\0')
-    {
-      centertext[i] = border[j];
-      i++;
-      j++;
-    }
-  if ((tmp * 2) != maxw - my_strlen(str))
-  {
-    centertext[i] = replace;
-    i++;
-  }
-  while (tmp > 0)
-    {
-      centertext[i] = replace;
-      i++;
-      tmp--;
-    }
-  while (*str)
-    {
-      centertext[i] = *str;
-      i++;
-      str = str + 1;
-    }
-  tmp = len;
-  while (tmp > 0)
-    {
-      centertext[i] = replace;
-      i++;
-      tmp--;
-    }
-  j = 0;
-  while (border[j] != '\0')
-    {
-      centertext[i] =  border[j];
-      i++;
-      j++;
-    }
-  while (z > 0)
-    {
-      centertext[i] = ' ';
-      z--;
-      i++;
-    }
-  centertext[i] = '\n';
-  return (centertext);
-}
-
-/*
-** Ajoute une salle sur la map aux coordonnées x et y
-** Version temporaire non terminée
-*/
-char		*add_salle(int x, int y, char *nw)
-{
-  int		i;
-
-  i = 0;
-  while (x > 0)
-    {
-      i++;
-      x--;
-    }
-  while (y > 0)
-    {
-      i = i + 11;
-      y--;
-    }
-  nw[i] = '1';
-  return (nw);
-}
-
-/*
-** Crée une map et positionne les salles
-** Version temporaire non terminée
-*/
-char		*generate_map(char *file)
-{
-  int           i;
-  int           j;
-  int           k;
-  int           count;
-  char          *nw;
-
-  nw = xmalloc(100 * sizeof(char *));
-  i = 0;
-  j = 0;
-  while (j < 9)
-    {
-      while (k < 11)
-        {
-          nw[i] = '*';
-          k++;
-          i++;
-        }
-      k = 0;
-      nw[i] = '\n';
-      i++;
-      j++;
-    }
-  i = 0;
-  count = 0;
-  while (count < 2)
-    {
-      if (file[i] == '\n')
-        count++;
-      i++;
-    }
-
-  nw = add_salle(10, 0, nw);
-  nw[0] = file[i];
-  return (nw);
-}
-
-/*
 ** Crée la structure game et intègre les données principales
 */
 t_game		*init(char *file)
 {
   t_game	*game;
-  char		*buffer;
 
   game = xmalloc(sizeof(t_game));
   game->turn = 0;
   game->file = my_read(file);
-  game->map = generate_map(game->file);
-  game->fourmis = buffer;
   return (game);
 }

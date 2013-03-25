@@ -5,10 +5,11 @@
 ** Login   <billet_a@epitech.net>
 ** 
 ** Started on  Tue Mar 19 15:51:41 2013 gregoire1 billet
-** Last update Sun Mar 24 00:15:47 2013 gregoire1 billet
+** Last update Mon Mar 25 18:08:33 2013 gregoire1 billet
 */
 
-#include "head.h"
+#include	"/home/billet_a/lib/header.h"
+#include	"head.h"
 
 /*
 ** Vérifie l'existence du fichier envoyé en paramètre
@@ -24,9 +25,9 @@ int		file_exists(char *str)
 int		error(int ac, char **av)
 {
   if (ac != 2)
-    my_putstr("\n ! Vous devez avoir un argument au programme !\n\n");
+    aff("\n ! Vous devez avoir un argument au programme !\n\n");
   else if (!file_exists(av[1]))
-    my_putstr("Votre fichier n'existe pas");
+    aff("Votre fichier n'existe pas");
   else
     return (0);
   return (1);

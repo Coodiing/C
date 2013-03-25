@@ -5,12 +5,12 @@
 ** Login   <billet_a@epitech.net>
 **
 ** Started on  Thu Oct  4 19:23:43 2012 gregoire1 billet
-** Last update Thu Oct  4 19:23:45 2012 gregoire1 billet
+** Last update Mon Mar 25 17:25:17 2013 gregoire1 billet
 */
 
-void	my_put_nbr(int nb)
+void		my_put_nbr(int nb)
 {
-  int	cut;
+  int		cut;
 
   cut = 1;
   if (nb < 0)

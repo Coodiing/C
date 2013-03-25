@@ -5,16 +5,22 @@
 ** Login   <billet_a@epitech.net>
 ** 
 ** Started on  Sun Mar 24 00:10:00 2013 gregoire1 billet
-** Last update Sun Mar 24 00:13:48 2013 gregoire1 billet
+** Last update Mon Mar 25 18:08:54 2013 gregoire1 billet
 */
 
 #include	"head.h"
 
 /*
-** Parse intégralement le fichier de conf et récupère les salles avec les liaisons
+** Parse le fichier de conf en paramètre et récupère
+** Le nom, les coordonnées et les liasions entre chaque salle
 */
-void		parse(t_game *game, char *file)
+t_list		*parse(char *file)
 {
-  game->inx = 1;
-  game->outx = 1;
+  t_list        *begin;
+
+  begin = xmalloc(sizeof(t_list));
+  begin = 0;
+  add_room(&begin, "Entry", 0, 0);
+  add_room(&begin, "Exit", 760, 760);
+  return (begin);
 }
